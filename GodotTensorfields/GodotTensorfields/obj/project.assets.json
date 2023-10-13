@@ -1,0 +1,102 @@
+{
+  "version": 3,
+  "targets": {
+    "net7.0": {
+      "GodotSharp/4.1.2": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0/GodotSharp.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/GodotSharp.dll": {
+            "related": ".xml"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "GodotSharp/4.1.2": {
+      "sha512": "iuXYVigWjGVLUIhqGDf5f/kba2ILQKZbE3U6eQrc1582yn5U39j2rDwFPlzfamvxiSu340tHzBnQ3IDi/T/Htw==",
+      "type": "package",
+      "path": "godotsharp/4.1.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "godotsharp.4.1.2.nupkg.sha512",
+        "godotsharp.nuspec",
+        "lib/net6.0/GodotSharp.dll",
+        "lib/net6.0/GodotSharp.xml"
+      ]
+    }
+  },
+  "projectFileDependencyGroups": {
+    "net7.0": [
+      "GodotSharp >= 4.1.2"
+    ]
+  },
+  "packageFolders": {
+    "C:\\Users\\kinta\\.nuget\\packages\\": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "C:\\Users\\kinta\\development\\godot-tensorfields\\GodotTensorfields\\GodotTensorfields\\GodotTensorfields.csproj",
+      "projectName": "GodotTensorfields",
+      "projectPath": "C:\\Users\\kinta\\development\\godot-tensorfields\\GodotTensorfields\\GodotTensorfields\\GodotTensorfields.csproj",
+      "packagesPath": "C:\\Users\\kinta\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\kinta\\development\\godot-tensorfields\\GodotTensorfields\\GodotTensorfields\\obj\\",
+      "projectStyle": "PackageReference",
+      "configFilePaths": [
+        "C:\\Users\\kinta\\AppData\\Roaming\\NuGet\\NuGet.Config"
+      ],
+      "originalTargetFrameworks": [
+        "net7.0"
+      ],
+      "sources": {
+        "https://api.nuget.org/v3/index.json": {}
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "projectReferences": {}
+        }
+      },
+      "warningProperties": {
+        "warnAsError": [
+          "NU1605"
+        ]
+      }
+    },
+    "frameworks": {
+      "net7.0": {
+        "targetAlias": "net7.0",
+        "dependencies": {
+          "GodotSharp": {
+            "target": "Package",
+            "version": "[4.1.2, )"
+          }
+        },
+        "imports": [
+          "net461",
+          "net462",
+          "net47",
+          "net471",
+          "net472",
+          "net48",
+          "net481"
+        ],
+        "assetTargetFallback": true,
+        "warn": true,
+        "frameworkReferences": {
+          "Microsoft.NETCore.App": {
+            "privateAssets": "all"
+          }
+        },
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.402\\RuntimeIdentifierGraph.json"
+      }
+    }
+  }
+}

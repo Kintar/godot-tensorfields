@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "dMmvNt4uxv6bagJoQvkfRipg1g5Lis3Pe/wHa6ZabBwNBHRmsVXnbQh6inXIhCTQYNonkagvEDwWHl+j/wbgUw==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\kinta\\development\\godot-tensorfields\\GodotTensorfields\\GodotTensorfields\\GodotTensorfields.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\kinta\\.nuget\\packages\\godotsharp\\4.1.2\\godotsharp.4.1.2.nupkg.sha512"
+  ],
+  "logs": []
+}

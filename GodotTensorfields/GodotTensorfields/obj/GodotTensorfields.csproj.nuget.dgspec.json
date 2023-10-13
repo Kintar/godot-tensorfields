@@ -1,0 +1,67 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\kinta\\development\\godot-tensorfields\\GodotTensorfields\\GodotTensorfields\\GodotTensorfields.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\kinta\\development\\godot-tensorfields\\GodotTensorfields\\GodotTensorfields\\GodotTensorfields.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\kinta\\development\\godot-tensorfields\\GodotTensorfields\\GodotTensorfields\\GodotTensorfields.csproj",
+        "projectName": "GodotTensorfields",
+        "projectPath": "C:\\Users\\kinta\\development\\godot-tensorfields\\GodotTensorfields\\GodotTensorfields\\GodotTensorfields.csproj",
+        "packagesPath": "C:\\Users\\kinta\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\kinta\\development\\godot-tensorfields\\GodotTensorfields\\GodotTensorfields\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\kinta\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "dependencies": {
+            "GodotSharp": {
+              "target": "Package",
+              "version": "[4.1.2, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.402\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
