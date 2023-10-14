@@ -1,74 +1,87 @@
-﻿using Microsoft.VisualBasic;
+﻿using Godot;
 
 namespace GodotTensorfields;
 
-public class Tensor
+public readonly struct Tensor
 {
-    private bool oldTheta;
     private readonly float r;
-    private readonly float[] matrix;
-    private double theta;
-    
-    public double Theta
-    {
-        get
-        {
-            if (oldTheta)
-            {
-                theta = CalculateTheta();
-                oldTheta = false;
-            }
+    private readonly float x, y;
 
-            return theta;
-        }
-        
-        private set => theta = value;
-    }
-
+    public readonly float Theta;
 
     public static readonly Tensor Zero = new Tensor(1,
-        new float[] { 0, 0 });
+        0, 0);
 
-    public Tensor(float r, float[] matrix)
+    public Tensor(float r, float x, float y)
     {
-        if (matrix.Length != 2)
-        {
-            throw new ArgumentException("matrix must be 2 elements");
-        }
-
         this.r = r;
-        this.matrix = matrix;
-        oldTheta = false;
-        theta = CalculateTheta();
-    }
-    
-
-    private double CalculateTheta()
-    {
-        if (r == 0)
-        {
-            return 0;
-        }
-
-        return Math.Atan2(matrix[1] / r, matrix[0] / r) / 2f;
+        this.x = x;
+        this.y = y;
+        Theta = r == 0 ? 0 : (float)Math.Atan2(y / r, x / r) / 2f;
     }
 
     public Tensor Add(Tensor other, bool smooth = false)
     {
-        var newMatrix = matrix;
-        var newR = 2f;
-        for (var i = 0; i < 2; i++)
+        var nx = x * r + other.x * other.r;
+        var ny = y * r + other.y * other.r;
+        var nr = 2f;
+
+        if (!smooth) return new Tensor(nr, nx, ny);
+
+        nr = (float)Math.Sqrt(x * x + y * y);
+        nx /= nr;
+        ny /= nr;
+
+        return new Tensor(nr, nx, ny);
+    }
+
+    public Tensor Scale(float s)
+    {
+        return new Tensor(r * s, x, y);
+    }
+
+    public Tensor Clone()
+    {
+        return new Tensor(r, x, y);
+    }
+
+    public Tensor Rotate(float theta)
+    {
+        if (theta == 0)
         {
-            matrix[i] = matrix[i] * r + other.matrix[i] * other.r;
+            return Clone();
         }
 
-        if (smooth)
+        theta += Theta;
+        if (theta < float.Pi)
         {
-            newR = (float)Math.Sqrt(matrix[0] * matrix[0] + matrix[1] * matrix[1]);
-            newMatrix[0] /= newR ;
-            newMatrix[1] /= newR ;
+            theta += float.Pi;
+        } else if (theta > float.Pi)
+        {
+            theta -= float.Pi;
         }
 
-        return new Tensor(newR , newMatrix);
+        return new Tensor(r, float.Cos(2 * theta) * r, float.Sin(2 * theta) * r);
+    }
+
+    public Vector2 GetMajor()
+    {
+        if (r == 0)
+        {
+            return Vector2.Zero;
+        }
+
+        return new Vector2(float.Cos(Theta), float.Sin(Theta));
+    }
+
+    public Vector2 GetMinor()
+    {
+        if (r == 0)
+        {
+            return Vector2.Zero;
+        }
+
+        var angle = Theta + float.Pi / 2;
+        return new Vector2(float.Cos(angle), float.Sin(angle));
     }
 }
